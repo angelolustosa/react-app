@@ -4,30 +4,49 @@ import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [nome, setNome] = useState('Angelo');
+
+  console.log('app.jsx', nome);
+
+  const alunos = [
+    {
+      nome: 'Alberto',
+      nome_completo: 'Alberto Wowtilla Silva Galdino'
+    },
+    {
+      nome: 'Breno',
+      nome_completo: 'Breno Aragão Araújo Lima'
+    },
+    {
+      nome: 'Rômulo',
+      nome_completo: 'Rômulo da Rocha Teixeira'
+    },
+  ]
+
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
+      <h1>Lista de Alunos da FS36</h1>
+
+      {alunos.map(aluno => <><h3>{aluno.nome}</h3><p>{aluno.nome_completo}</p>  </>)}
+      {/* {alunos.map(aluno => {
+        return (<>
+          <h3>{aluno.nome}</h3>
+          <p>{aluno.nome_completo}</p>
+        </>)
+      })} */}
+
+      {/*  <h3>Angelo</h3>
+      <p>Angelo Lustosa de Figueiredo Filho</p>
+      <h3>Alberto</h3>
+      <p>Alberto Wowtilla</p> */}
       <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
+        {/* <button onClick={() => {
+          setNome(`${nome} Lustosa`)
+        }}>
+          Adicionar Sobrenome
+        </button> */}
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
   )
 }
