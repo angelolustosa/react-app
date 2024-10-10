@@ -1,8 +1,6 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { useState } from 'react';
 import './App.css'
-import { Coleguinha } from './components/Coleguinha';
+import { Coleguinha } from './components/coleguinha/Coleguinha.jsx'
 
 function App() {
   const [nome, setNome] = useState('Angelo');
@@ -29,28 +27,33 @@ function App() {
     <>
       <h1>Lista de Alunos da FS36</h1>
 
-      {alunos.map(aluno => <Coleguinha
-        nome={aluno.nome}
-        nome_completo={aluno.nome_completo}
-      />)}
-      {/* {alunos.map(aluno => {
-        return (<>
-          <h3>{aluno.nome}</h3>
-          <p>{aluno.nome_completo}</p>
-        </>)
-      })} */}
 
-      {/*  <h3>Angelo</h3>
+      <p>TESTE</p>
+      <Coleguinha
+        nome="Angelo"
+        idade={28}
+        nomeCompleto="Angelo Lustosa de Figueiredo Filho" />
+      <Coleguinha
+        nome="Alberto"
+        idade={37}
+        nomeCompleto="Alberto Wowtilla" />
+      <Coleguinha
+        nome="Miguel"
+        idade={20}
+        nomeCompleto="Miguel Alves Pires de Oliveira"
+      />
+      <Coleguinha />
+      <Coleguinha />
+      <Coleguinha />
+
+      {/* <h3>Angelo</h3>
       <p>Angelo Lustosa de Figueiredo Filho</p>
+
       <h3>Alberto</h3>
       <p>Alberto Wowtilla</p> */}
-      <div className="card">
-        {/* <button onClick={() => {
-          setNome(`${nome} Lustosa`)
-        }}>
-          Adicionar Sobrenome
-        </button> */}
-      </div>
+
+      {/* <h3>Miguel</h3>
+      <p>Miguel Alves Pires de Oliveira</p> */}
     </>
   )
 }
